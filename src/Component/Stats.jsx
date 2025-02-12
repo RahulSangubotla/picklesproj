@@ -1,5 +1,6 @@
 import React from "react";
 import bgImage from "..\\assets\\stats-copy.png"
+import content_number from "../assets/content_number.svg"
 const Stats = () => {
   return (
     <div
@@ -11,7 +12,7 @@ const Stats = () => {
       width: '100%',
     }}
     >
-      <img src="src\assets\content_number.svg"></img>
+      <img src={content_number}></img>
     </div>
   );
 };
