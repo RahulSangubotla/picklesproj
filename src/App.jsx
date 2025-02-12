@@ -11,7 +11,7 @@ import Register from "./pages/Register"
 const App = () => (
   <div style={{ textAlign: "center" }}>
     <Routes>
-      <Route path="/" element={<Home/>} />
+      <Route path="/pickleproj" element={<Home/>} />
       <Route path="/login" element={<LoginPage/>} />
       <Route path="/register" element={<Register/>} />
       <Route path="/pickleslist" element={<PicklesList/>} />
