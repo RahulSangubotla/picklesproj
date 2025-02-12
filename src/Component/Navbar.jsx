@@ -23,7 +23,7 @@ const Navbar = () => {
 
       
       <div className="flex-1 flex items-center justify-start space-x-6 ml-15">
-        <a href="" className="text-black font-medium">Home</a>
+        <a href="/picklesproj" className="text-black font-medium">Home</a>
         <a href="#" className="text-gray-500">About Us</a>
         <a href="#/pickleslist" className="text-gray-500">Products</a>
         <a href="#" className="text-gray-500">Contact Us</a>
