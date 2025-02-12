@@ -1,6 +1,9 @@
 import React from 'react';
 import backgroundImage from '../assets/backgroundImage.png';
-
+import mini1 from '../assets/mini1.png';
+import mini2 from '../assets/mini2.png';
+import mini3 from '../assets/mini3.png';
+import mini4 from '../assets/mini4.png';
 
 const Footer = () => {
   return (
@@ -35,37 +38,32 @@ const Footer = () => {
                 <div className="flex space-x-4 mt-4">
                   <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                     <img 
-                      src="src\\assets\\mini1.png"
+                      src={mini1}
                       alt="Social Icon 1"
-                      
                     />
                   </div>
-                  <div className="w-10 h-10  rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center">
                     <img 
-                      src="src\\assets\\mini2.png"
+                      src={mini2}
                       alt="Social Icon 2"
-                      
                     />
                   </div>
-                  <div className="w-10 h-10  rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center">
                     <img 
-                      src="src\\assets\\mini3.png"
+                      src={mini3}
                       alt="Social Icon 3"
-                      
                     />
                   </div>
-                  <div className="w-10 h-10  rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center">
                     <img 
-                      src="src\\assets\\mini4.png"
+                      src={mini4}
                       alt="Social Icon 4"
-                      
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            
             <div>
               <h2 className="text-2xl font-bold mb-6">Customer Support</h2>
               <ul className="space-y-2">
@@ -88,7 +86,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            
             <div>
               <h2 className="text-2xl font-bold mb-6">Quick Links</h2>
               <ul className="space-y-2">
@@ -114,8 +111,7 @@ const Footer = () => {
         </div>
       </div>
 
-      
-      <div className="bg-[#7B1816]  text-white py-4 text-center">
+      <div className="bg-[#7B1816] text-white py-4 text-center">
         <p>Copyright 2020 Telengana Spicy Pickles. All Right Reserved</p>
       </div>
     </div>

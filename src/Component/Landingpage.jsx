@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
-
+import im2 from "../assets/im2.png";
 
 
 const Landingpage = () => {
@@ -27,7 +27,7 @@ const Landingpage = () => {
       <div className="flex justify-center items-center">        
         <div className="rounded-3xl overflow-hidden mb-20 ">
           <img
-            src="src\\assets\\im2.png"
+            src={im2}
             alt="Collection of homemade pickles in jars with fruits and decorative elements"
             className="w-full h-full object-cover"
           />

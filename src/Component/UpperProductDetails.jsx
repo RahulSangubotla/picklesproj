@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import images
+import pick1 from '../assets/pick1.png';
+import pick2 from '../assets/pick2.png';
+import pick3 from '../assets/pick3.png';
+
 const UpperProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Array of images
+  // Array of images using imported images
   const images = [
-    { main: "src\\assets\\pick1.png", thumb: "src\\assets\\pick1.png" },
-    { main: "src\\assets\\pick3.png", thumb: "src\\assets\\pick2.png" }
+    { main: pick1, thumb: pick1 },
+    { main: pick3, thumb: pick2 }
   ];
 
   const decreaseQuantity = () => {
@@ -33,18 +38,25 @@ const UpperProductDetails = () => {
     setCurrentImageIndex(index);
   };
 
+  // Navigation button component for reusability
+  const NavigationButton = ({ direction, onClick, children }) => (
+    <button 
+      onClick={onClick}
+      className={`absolute ${direction === 'left' ? 'left-2' : 'right-2'} top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md z-10 hover:bg-[#99cc00] transition-colors group`}
+    >
+      {children}
+    </button>
+  );
+
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-200px)] mb-10">
       <div className="max-w-5xl p-6 bg-white rounded-lg w-full mx-4">
         <div className="flex gap-8">
           {/* Image Section */}
           <div className="relative w-1/2">
-            <button 
-              onClick={previousImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md z-10 hover:bg-[#99cc00] transition-colors group"
-            >
+            <NavigationButton direction="left" onClick={previousImage}>
               <ChevronLeft className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" />
-            </button>
+            </NavigationButton>
             
             <img 
               src={images[currentImageIndex].main}
@@ -52,18 +64,15 @@ const UpperProductDetails = () => {
               className="w-full rounded-lg transition-opacity duration-300"
             />
             
-            <button 
-              onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md z-10 hover:bg-[#99cc00] transition-colors group"
-            >
+            <NavigationButton direction="right" onClick={nextImage}>
               <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" />
-            </button>
+            </NavigationButton>
 
             {/* Thumbnail previews */}
             <div className="absolute -top-4 left-4 flex gap-2">
               {images.map((image, index) => (
                 <img 
-                  key={index}
+                  key={`thumb-${index}`}
                   src={image.thumb}
                   alt={`thumbnail ${index + 1}`}
                   onClick={() => selectImage(index)}
@@ -87,7 +96,7 @@ const UpperProductDetails = () => {
             <div className="flex items-center gap-2">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  <Star key={`star-${i}`} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               <span className="text-sm text-gray-500">(22)</span>

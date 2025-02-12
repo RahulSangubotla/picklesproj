@@ -1,12 +1,19 @@
 import React from "react";
+import icon1 from "../assets/icon1.svg";
+import icon2 from "../assets/icon2.svg";
+import icon3 from "../assets/icon3.svg";
+import icon4 from "../assets/icon4.svg";
+import icon5 from "../assets/icon5.svg";
+import icon6 from "../assets/icon6.svg";
+import middleImage from "../assets/middle.png";
 
 const features = [
-  { title: "Eat Healthy Food", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: "src\\assets\\icon1.svg" },
-  { title: "Pesticide Free", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: "src\\assets\\icon2.svg" },
-  { title: "Sweet Exotic Food", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: "src\\assets\\icon3.svg" },
-  { title: "Order Flexibility", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: "src\\assets\\icon4.svg" },
-  { title: "Variety & Selection", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: "src\\assets\\icon5.svg" },
-  { title: "Livestock Product", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: "src\\assets\\icon6.svg" },
+  { title: "Eat Healthy Food", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: icon1 },
+  { title: "Pesticide Free", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: icon2 },
+  { title: "Sweet Exotic Food", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: icon3 },
+  { title: "Order Flexibility", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: icon4 },
+  { title: "Variety & Selection", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: icon5 },
+  { title: "Livestock Product", description: "Est ante in nibh mauris. Ullamcor morbi tincidunt ornare massa", icon: icon6 },
 ];
 
 const FeatureSection = () => {
@@ -18,7 +25,7 @@ const FeatureSection = () => {
         <div className="flex flex-col space-y-6 w-1/3">
           {features.slice(0, 3).map((feature, index) => (
             <div key={index} className="flex items-start space-x-4">
-              <img src={feature.icon} ></img>
+              <img src={feature.icon} alt={feature.title} />
               <div>
                 <h3 className="text-lg font-semibold">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -27,12 +34,12 @@ const FeatureSection = () => {
           ))}
         </div>
         <div className="w-1/3 flex justify-center">
-          <img src="src\\assets\\middle.png" alt="Feature Image" className="w-full rounded-lg   " />
+          <img src={middleImage} alt="Feature Image" className="w-full rounded-lg" />
         </div>
         <div className="flex flex-col space-y-6 w-1/3">
           {features.slice(3).map((feature, index) => (
             <div key={index} className="flex items-start space-x-4">
-              <img src={feature.icon} ></img>
+              <img src={feature.icon} alt={feature.title} />
               <div>
                 <h3 className="text-lg font-semibold">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>

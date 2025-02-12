@@ -1,15 +1,24 @@
 import React from 'react'
 import Navbar from '../Component/Navbar'
 import bgImage from "../assets/slider_pl.png"
-import ProductCard from '../Component/ProductCard';
-import Stats from '../Component/Stats';
-import Testimonials from '../Component/Testimonials';
-import Footer from '../Component/Footer';
-import { Search } from 'lucide-react';
+import ProductCard from '../Component/ProductCard'
+import Stats from '../Component/Stats'
+import Testimonials from '../Component/Testimonials'
+import Footer from '../Component/Footer'
+import { Search } from 'lucide-react'
+
+// Import all images
+import pick1 from "../assets/pick1.png"
+import pick2 from "../assets/pick2.png"
+import pick3 from "../assets/pick3.png"
+import pick4 from "../assets/pick4.png"
+import pick5 from "../assets/pick5.png"
+import pick6 from "../assets/pick6.png"
+import pick7 from "../assets/pick7.png"
 
 const products = [
     {
-        image: "src\\assets\\pick1.png",
+        image: pick1,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -19,7 +28,7 @@ const products = [
         unit: "250gms"
     },
     {
-        image: "src\\assets\\pick2.png",
+        image: pick2,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -29,7 +38,7 @@ const products = [
         unit: "250gms"
     },
     {
-        image: "src\\assets\\pick3.png",
+        image: pick3,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -39,7 +48,7 @@ const products = [
         unit: "250gms"
     },
     {
-        image: "src\\assets\\pick4.png",
+        image: pick4,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -49,7 +58,7 @@ const products = [
         unit: "250gms"
     },
     {
-        image: "src\\assets\\pick5.png",
+        image: pick5,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -59,7 +68,7 @@ const products = [
         unit: "250gms"
     },
     {
-        image: "src\\assets\\pick6.png",
+        image: pick6,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -69,7 +78,7 @@ const products = [
         unit: "250gms"
     },
     {
-        image: "src\\assets\\pick7.png",
+        image: pick7,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -79,7 +88,7 @@ const products = [
         unit: "250gms"
     },
     {
-        image: "src\\assets\\pick6.png",
+        image: pick6,
         title: "Mango Avakaya",
         rating: 2,
         reviews: 24,
@@ -89,13 +98,15 @@ const products = [
         unit: "250gms"
     }
 ];
+
 const tags = ['Breads', 'healthy', 'organic', 'tomato', 'juices', 'natural'];
+
 function PicklesList() {
     return (
         <div>
             <Navbar />
             <div
-                className="flex justify-center items-center "
+                className="flex justify-center items-center"
                 style={{
                     backgroundImage: `url(${bgImage})`,
                     backgroundSize: 'cover',
@@ -163,21 +174,21 @@ function PicklesList() {
                             </div>
                         </div>
                     </div>
-                        <div className="grid grid-cols-3 gap-6">
-                            {products.map((product, index) => (
-                                <ProductCard
-                                    key={index}
-                                    image={product.image}
-                                    title={product.title}
-                                    rating={product.rating}
-                                    reviews={product.reviews}
-                                    discount={product.discount}
-                                    currentPrice={product.currentPrice}
-                                    originalPrice={product.originalPrice}
-                                    unit={product.unit}
-                                />
-                            ))}
-                        </div>             
+                    <div className="grid grid-cols-3 gap-6">
+                        {products.map((product, index) => (
+                            <ProductCard
+                                key={index}
+                                image={product.image}
+                                title={product.title}
+                                rating={product.rating}
+                                reviews={product.reviews}
+                                discount={product.discount}
+                                currentPrice={product.currentPrice}
+                                originalPrice={product.originalPrice}
+                                unit={product.unit}
+                            />
+                        ))}
+                    </div>             
                 </div>
             </div>
             <Stats/>
