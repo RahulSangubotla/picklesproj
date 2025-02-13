@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import img from "../assets/Image.svg"
 
 const testimonials = [
   {
@@ -38,7 +39,7 @@ const Testimonials = () => {
     return (
       <div className={`bg-white p-6 rounded-lg shadow-md w-full md:w-1/3 flex flex-col items-center text-center transition-opacity duration-300 ease-in-out ${transitioning ? 'opacity-0' : 'opacity-100'
                 }`}>
-        <div className="rounded-full p-4 mb-4"><img src="src\\assets\\Image.svg" alt={name} /></div>
+        <div className="rounded-full p-4 mb-4"><img src={img} alt={name} /></div>
         <h3 className="text-lg font-semibold">{name}</h3>
         <div className="flex justify-center my-2 text-yellow-500">
           {[...Array(Math.floor(rating))].map((_, index) => (
